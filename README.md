@@ -29,10 +29,10 @@ type UserAgeSpecification struct {
 }
 
 func NewUserAgeSpecification() spec.Specification[User] {
-	userAgeSpecification := &UserAgeSpecification{}
-	userAgeSpecification.Specification = spec.NewSpecification[User](userAgeSpecification.IsSatisfiedBy)
+	specification := &UserAgeSpecification{}
+	specification.Specification = spec.NewSpecification[User](specification.IsSatisfiedBy)
 
-	return userAgeSpecification.Specification
+	return specification.Specification
 }
 
 func (spec *UserAgeSpecification) IsSatisfiedBy(entity User) bool {
